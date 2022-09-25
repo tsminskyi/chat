@@ -1,1 +1,8 @@
 @import "semantic-ui";
+.chat-box{
+  height: 450px;
+  overflow: auto;
+}
+.main-color, body{
+  background-color: #534848 !important;
+}

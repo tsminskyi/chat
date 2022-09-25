@@ -1,23 +1,17 @@
 <div class="ui small menu inverted">
   <div class="ui container">
-    <a class="item">
-      Home
-    </a>
-    <a class="item">
-      Messages
-    </a>
+    <%= link_to "Chat room", root_path, class: 'item' %>
     <div class="right menu">
-      <div class="ui dropdown item">
-        Language <i class="angle double down icon"></i>
-        <div class="menu">
-          <a class="item">log in</a>
-          <a class="item">Logout</a>
+      <div class="ui dropdown item" data-controller="testf--testj" data-testf--testj-target="menu">
+        Menu <i class="angle double down icon" data-testf--testj-target="icon"></i>
+        <div class="menu" data-testf--testj-target="items">
+          <%= link_to "Log In", login_path, class: 'item' %>
           <a class="item">Sign up</a>
         </div>
       </div>
-      <div class="item">
-        <div class="ui primary button">Sign Up</div>
-      </div>
+      <!--      <div class="item">-->
+      <!--        <div class="ui primary button">Sign Up</div>-->
+      <!--      </div>-->
     </div>
   </div>
 </div>
