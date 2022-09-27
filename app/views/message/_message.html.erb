@@ -1,0 +1,15 @@
+<% @messages.each do |mes| %>
+  <div class="event">
+    <div class="label">
+      <%= image_tag(mes.user.photo || "photo_def.ico", width: 200) %>
+    </div>
+    <div class="content">
+      <div class="summary">
+        <em><%= mes.user.username %> : </em> <%= mes.body %>
+        <div class="date">
+          <%= mes.created_at.strftime(" at %I:%M%p %B %Y") %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

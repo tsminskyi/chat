@@ -5,27 +5,31 @@
 <div class="ui placeholder inverted segment">
   <div class="ui two column very relaxed stackable grid">
     <div class="column">
-      <div class="ui form">
-        <div class="field">
-          <h5 class="ui inverted">
-            Username
-          </h5>
-          <div class="ui left icon input">
-            <input type="text" placeholder="Username">
-            <i class="user icon"></i>
+      <%= form_with scope: :session, url: login_path, data: { turbo: false } do |form| %>
+
+        <div class="ui form">
+          <div class="field">
+            <h5 class="ui inverted">
+              <%= form.label :username %>
+            </h5>
+            <div class="ui left icon input">
+              <%= form.text_field :username, placeholder: 'Username' %>
+              <i class="user icon"></i>
+            </div>
           </div>
-        </div>
-        <div class="field">
-          <h5 class="ui inverted">
-            Password
-          </h5>
-          <div class="ui left icon input">
-            <input type="password" placeholder="password">
-            <i class="lock icon"></i>
+          <div class="field">
+            <h5 class="ui inverted">
+              <%= form.label :password %>
+            </h5>
+            <div class="ui left icon input">
+              <%= form.password_field :password, placeholder: 'Password' %>
+              <i class="lock icon"></i>
+            </div>
           </div>
+          <%= form.submit "Login", class: "ui blue submit button" %>
         </div>
-        <div class="ui blue submit button">Login</div>
-      </div>
+
+      <% end %>
     </div>
     <div class="middle aligned column">
       <div class="ui big button orange">

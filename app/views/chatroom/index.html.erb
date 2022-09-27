@@ -2,26 +2,17 @@
   <i class="circular coffee icon orange"></i>
   Welcome to chat
 </h2>
-
+<%= will_paginate @messages %>
+<br>
+<%= session[:user_id] %>
+<br>
 <div class="ui two column grid">
   <div class="twelve wide column">
     <div class="ui fluid card chat-box main-color">
       <div class="content">
         <div class="ui large feed">
 
-          <div class="event">
-            <div class="label">
-              <img src="/images/avatar/small/jenny.jpg">
-            </div>
-            <div class="content">
-              <div class="summary">
-                <em>Jenny Hess:</em> to your coworker group.
-                <div class="date">
-                  3 days ago
-                </div>
-              </div>
-            </div>
-          </div>
+          <%= render 'message/message' %>
 
         </div>
       </div>

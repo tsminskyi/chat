@@ -1,8 +1,27 @@
 @import "semantic-ui";
-.chat-box{
+
+.chat-box {
   height: 450px;
   overflow: auto;
 }
-.main-color, body{
+
+.main-color, body {
   background-color: #534848 !important;
+}
+
+.message {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  div {
+    background-color: #730E15;
+    cursor: pointer;
+  }
+}
+
+.close {
+  transition: 1s;
+  opacity: 0;
 }

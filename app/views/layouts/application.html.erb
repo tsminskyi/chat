@@ -11,8 +11,9 @@
   <%= javascript_importmap_tags %>
 </head>
 
-<body >
-<%= render 'layouts/navigation' %>
+<body>
+<%= render 'shared/navigation' %>
+<%= render 'shared/messages' %>
 <div class="ui container">
   <%= yield %>
 </div>
