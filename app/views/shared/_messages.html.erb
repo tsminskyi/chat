@@ -1,6 +1,7 @@
-<div class="message" >
+<div class="message_content">
   <% flash.each do |name, msg| %>
-    <div data-controller="message" data-message-target="message_item">
+    <div class="ui message huge
+      <%= name %>" data-controller="message" data-message-target="message_item">
       <%= msg %>
     </div>
   <% end %>

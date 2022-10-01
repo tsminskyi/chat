@@ -1,4 +1,8 @@
 class ChatroomController < ApplicationController
+  include ApplicationHelper
+
+  before_action :required_user_helper
+
   def show
 
   end
@@ -8,6 +12,7 @@ class ChatroomController < ApplicationController
   end
 
   def index
+    @message = Message.new
     @messages = Message.order("created_at DESC").paginate(page: params[:page], per_page: 10)
   end
 end

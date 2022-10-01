@@ -3,10 +3,17 @@
     <%= link_to "Chat room", root_path, class: 'item' %>
     <div class="right menu">
       <div class="ui dropdown item" data-controller="testf--testj" data-testf--testj-target="menu">
-        Menu <i class="angle double down icon" data-testf--testj-target="icon"></i>
+        Account <i class="angle double down icon" data-testf--testj-target="icon"></i>
         <div class="menu" data-testf--testj-target="items">
-          <%= link_to "Log In", login_path, class: 'item' %>
-          <a class="item">Sign up</a>
+          <% if logged_in_helper? %>
+            <%= button_to "Log out", logout_path,  method: :delete, class:"item" %>
+            <a class="item">Sign up</a>
+            <a class="item">Sign up</a>
+            <a class="item">Sign up</a>
+          <% else %>
+            <%= link_to "Log In", login_path, class: 'item' %>
+            <a class="item">Sign up</a>
+          <% end %>
         </div>
       </div>
       <!--      <div class="item">-->

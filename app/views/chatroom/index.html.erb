@@ -3,9 +3,6 @@
   Welcome to chat
 </h2>
 <%= will_paginate @messages %>
-<br>
-<%= session[:user_id] %>
-<br>
 <div class="ui two column grid">
   <div class="twelve wide column">
     <div class="ui fluid card chat-box main-color">
@@ -17,15 +14,16 @@
         </div>
       </div>
       <div class="extra content ">
-        <form class="ui reply form">
-          <div class="ui fluid action input ">
-            <input type="text" placeholder="Message...">
-            <div class="ui orange button">
-              <i class="keyboard icon"></i>
-              Enter
+
+        <%= form_for(@message, html: { class: "ui reply form", role: "form" }, url: message_path) do |f| %>
+          <div class="field">
+            <div class="ui fluid action input ">
+              <%= f.text_field :body, placeholder: "Message..." %>
+              <%= f.button '<i class="keyboard icon"></i>Enter'.html_safe, class: "ui orange button" %>
             </div>
           </div>
-        </form>
+        <% end %>
+
       </div>
     </div>
   </div>

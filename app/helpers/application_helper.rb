@@ -10,7 +10,7 @@ module ApplicationHelper
 
   def required_user_helper
     if !logged_in_helper?
-      flash[:alert] = "You must be  logged"
+      flash[:error] = "You must be  logged"
       redirect_to login_path
     end
   end

@@ -250,7 +250,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   puma (~> 5.0)
-  rails (~> 7.0.3, >= 7.0.3.1)
+  rails (~> 7.0.4)
   rubocop
   selenium-webdriver
   semantic-ui-sass

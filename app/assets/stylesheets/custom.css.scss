@@ -9,19 +9,43 @@
   background-color: #534848 !important;
 }
 
-.message {
+.message_content {
   position: absolute;
   top: 20px;
   left: 50%;
   transform: translate(-50%, 0);
 
   div {
-    background-color: #730E15;
     cursor: pointer;
   }
 }
 
 .close {
-  transition: 1s;
   opacity: 0;
+  transition: 2s !important;
+}
+
+.menu {
+  button {
+    width: 100%;
+    border: none;
+    margin: 0;
+    text-align: left;
+    font-size: 1em !important;
+    padding: 0.78571429em 1.14285714em !important;
+    background: transparent !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+    text-transform: none !important;
+    font-weight: normal !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.05) !important;
+    color: rgba(0, 0, 0, 0.95) !important;
+  }
 }
