@@ -3,23 +3,32 @@
   Welcome to chat
 </h2>
 <%= will_paginate @messages %>
+<br>
 <div class="ui two column grid">
   <div class="twelve wide column">
-    <div class="ui fluid card chat-box main-color">
+    <div class="ui fluid card  main-color">
       <div class="content">
-        <div class="ui large feed">
+        <div id='message_container'>
 
-          <%= render 'message/message' %>
+          <%= turbo_stream_from "main" %>
+
+          <div id="messages" class="ui large feed chat-box">
+            <%= render @messages %>
+          </div>
 
         </div>
       </div>
-      <div class="extra content ">
+      <div class="extra content">
+        <%= form_with(model: @message,
+                      data: { controller: 'reset', action: 'turbo:submit-end->reset#reset' },
+                      remote: true,
+                      class: "ui reply form") do |f| %>
 
-        <%= form_for(@message, html: { class: "ui reply form", role: "form" }, url: message_path) do |f| %>
           <div class="field">
             <div class="ui fluid action input ">
               <%= f.text_field :body, placeholder: "Message..." %>
-              <%= f.button '<i class="keyboard icon"></i>Enter'.html_safe, class: "ui orange button" %>
+              <%= f.button '<i class="keyboard icon"></i>Enter'.html_safe,
+                           class: "ui orange button" %>
             </div>
           </div>
         <% end %>
@@ -28,6 +37,8 @@
     </div>
   </div>
   <div class="four wide column">
+
+
     <div class="ui card chat-box main-color">
       <div class="content">
         <div class="ui inverted vertical menu">
