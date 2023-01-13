@@ -2,25 +2,25 @@
   <i class="circular coffee icon orange"></i>
   Welcome to chat
 </h2>
-<%= will_paginate @messages %>
+<%#= will_paginate @messages %>
 <br>
 <div class="ui two column grid">
   <div class="twelve wide column">
     <div class="ui fluid card  main-color">
       <div class="content">
-        <div id='message_container'>
+        <div id='message_container' >
 
-          <%= turbo_stream_from "main" %>
+          <%= turbo_stream_from "messages" %>
 
-          <div id="messages" class="ui large feed chat-box">
-            <%= render @messages %>
+          <div id="messages" class="ui large feed chat-box" data-controller="scroll-to-end">
+            <%= render @messages%>
           </div>
 
         </div>
       </div>
       <div class="extra content">
         <%= form_with(model: @message,
-                      data: { controller: 'reset', action: 'turbo:submit-end->reset#reset' },
+                      data: { controller: "reset-form", action: 'turbo:submit-end->reset-form#reset' },
                       remote: true,
                       class: "ui reply form") do |f| %>
 
@@ -41,10 +41,9 @@
 
     <div class="ui card chat-box main-color">
       <div class="content">
-        <div class="ui inverted vertical menu">
-          <a class="item">
-            Friends
-          </a>
+        <%= turbo_stream_from "online_users" %>
+        <div id='online_users' class="ui inverted vertical menu">
+          <%= render @online_users %>
         </div>
       </div>
     </div>

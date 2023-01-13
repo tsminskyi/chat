@@ -13,6 +13,8 @@ class ChatroomController < ApplicationController
 
   def index
     @message = Message.new
-    @messages = Message.paginate(page: params[:page], per_page: 10)
+    @online_users = OnlineUser.all
+    # @messages = Message.paginate(page: params[:page], per_page: 10)
+    @messages = Message.all
   end
 end

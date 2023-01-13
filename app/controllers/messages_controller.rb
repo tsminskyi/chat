@@ -12,13 +12,12 @@ class MessagesController < ApplicationController
     @message = Message.new({ body: message_params[:body], user: current_user_helper })
     # debugger
     if @message.save
+      # Turbo::StreamsChannel.broadcast_append_to('main',
+      #                                           target: "messages",
+      #                                           partial: "messages/message",
+      #                                           locals: { message: @message, user: current_user_helper })
       # respond_to do |format|
-      #   format.turbo_stream do
-      #     render turbo_stream: turbo_stream.append(:messages, partial: "messages/message",
-      #                                              locals: { message: @message })
-      #   end
-      #   # format.turbo_stream
-      #   format.html { redirect_to root_path }
+      #  format.js { "console.log('hhhh');" }
       # end
     else
 
