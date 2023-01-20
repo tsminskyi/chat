@@ -12,7 +12,7 @@ export default class extends Controller {
         this.message_item.addEventListener('click', () => this.click());
         this.timer_id = setTimeout(() => {
             this.message_item.classList.add('close');
-        }, 5000);
+        }, 3000);
     }
 
 

@@ -1,0 +1,12 @@
+<%= form_with(model: @user, class: 'ui form') do |f| %>
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password_digest %>
+    <%= f.text_field :password_digest %>
+  </div>
+  <%= f.submit 'Create', class: 'ui button' %>
+
+<% end %>

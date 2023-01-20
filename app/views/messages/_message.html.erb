@@ -1,11 +1,13 @@
-<div class="event test">
+<div class="event">
   <div class="label">
     <%= image_tag(message.user.photo || "photo_def.ico", width: 200) %>
   </div>
   <div class="content">
     <div class="summary">
       <div class="summary_text current_<%= message.user.id %>">
-        <em><%= message.user.username %> : </em> <%= message.body %></div>
+        <em><%= message.user.username %> : </em>
+        <div><%= message.body %></div>
+      </div>
       <div class="date">
         <%= message.created_at.strftime(" at %I:%M%p %B %Y") %>
       </div>

@@ -1,0 +1,53 @@
+.signup-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+#icon-container {
+  position: relative;
+  height: 200px;
+  width: 350px;
+  display: flex;
+
+  #cup-body {
+    position: absolute;
+    height: 220px;
+    width: 300px;
+    border-radius: 0 0 150px 150px;
+    background-color: #fff;
+    margin: auto;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  #cup-body-2 {
+    position: absolute;
+    left: -40px;
+    top: 5px;
+    height: 100px;
+    width: 100px;
+    border-radius: 150px 0 0 150px;
+    background-color: #fff;
+    margin: auto;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  #cup-body-3 {
+    position: absolute;
+    left: -29px;
+    top: 15px;
+    height: 80px;
+    width: 45px;
+    border-radius: 50px 0 0 50px;
+    background-color: #534848;
+    margin: auto;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 2;
+  }
+}
+
+

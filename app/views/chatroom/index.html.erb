@@ -8,12 +8,12 @@
   <div class="twelve wide column">
     <div class="ui fluid card  main-color">
       <div class="content">
-        <div id='message_container' >
+        <div id='message_container'>
 
           <%= turbo_stream_from "messages" %>
 
           <div id="messages" class="ui large feed chat-box" data-controller="scroll-to-end">
-            <%= render @messages%>
+            <%= render @messages %>
           </div>
 
         </div>
@@ -26,7 +26,7 @@
 
           <div class="field">
             <div class="ui fluid action input ">
-              <%= f.text_field :body, placeholder: "Message..." %>
+              <%= f.text_area :body, placeholder: "Message...", rows: 1, wrap: "hard" %>
               <%= f.button '<i class="keyboard icon"></i>Enter'.html_safe,
                            class: "ui orange button" %>
             </div>

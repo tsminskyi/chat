@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
       # Turbo::StreamsChannel.broadcast_append_to('main',
       #                                           target: "messages",
       #                                           partial: "messages/message",
-      #                                           locals: { message: @message, user: current_user_helper })
+      #                                           locals: { message: @message, users: current_user_helper })
       # respond_to do |format|
       #  format.js { "console.log('hhhh');" }
       # end

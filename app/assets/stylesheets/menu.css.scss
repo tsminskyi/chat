@@ -1,0 +1,29 @@
+.close {
+  opacity: 0;
+  transition: 1s !important;
+}
+
+.menu {
+  button {
+    width: 100%;
+    border: none;
+    margin: 0;
+    text-align: left;
+    font-size: 1em !important;
+    padding: 0.78571429em 1.14285714em !important;
+    background: transparent !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+    text-transform: none !important;
+    font-weight: normal !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.05) !important;
+    color: rgba(0, 0, 0, 0.95) !important;
+  }
+}
