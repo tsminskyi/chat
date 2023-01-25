@@ -15,6 +15,6 @@ class ChatroomController < ApplicationController
     @message = Message.new
     @online_users = OnlineUser.all
     # @messages = Message.paginate(page: params[:page], per_page: 10)
-    @messages = Message.all
+    @messages = Message.custom_display
   end
 end
